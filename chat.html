@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082c63">
+  <title>Atendimento online — Adianta</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body class="chat-page">
+  <header class="topbar"><a class="brand" href="index.html"><img class="brand-logo" src="assets/adianta-logo.png" alt=""> adianta<span class="dot">.</span></a><a class="back-link" href="index.html#cadastro">Voltar ao cadastro</a></header>
+  <main class="chat-main">
+    <section class="chat-window" aria-labelledby="chat-title">
+      <div class="chat-titlebar"><span class="chat-status-dot"></span><div><h1 id="chat-title">Atendimento Adianta</h1><p>Assistente virtual · disponível agora</p></div></div>
+      <div id="messages" class="messages" role="log" aria-live="polite"><p class="message service-message">Olá! Sou o assistente virtual da Adianta. Posso ajudar você a encontrar serviços, se preparar para o atendimento ou solicitar um agendamento. Como posso ajudar?</p></div>
+      <div class="quick-replies" aria-label="Sugestões de assunto"><button type="button">Consultar serviços</button><button type="button">Documentos necessários</button><button type="button">Fazer agendamento</button></div>
+      <form id="message-form" class="message-form"><label class="sr-only" for="message-input">Escreva sua mensagem</label><input id="message-input" maxlength="500" placeholder="Escreva uma mensagem…" autocomplete="off" required><button type="submit">Enviar</button></form>
+    </section>
+  </main>
+  <script src="chat.js"></script>
+</body>
+</html>

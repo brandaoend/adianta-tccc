@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a2a">
+  <meta name="description" content="Adianta: proposta de triagem digital e organização do atendimento em repartições públicas.">
+  <title>Adianta — Menos fila. Mais atendimento.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Adianta, início"><img class="brand-logo" src="assets/adianta-logo.png" alt=""> adianta<span class="dot">.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Navegação principal">
+      <a href="#proposta">A proposta</a><a href="#servicos">Serviços</a><a href="#cadastro">Cadastro</a><a href="#diretrizes">Diretrizes</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <p class="eyebrow">PROPOSTA DE TRIAGEM DIGITAL · SERVIÇOS PÚBLICOS</p>
+        <h1>Menos fila.<br><em>Mais atendimento.</em></h1>
+        <p class="hero-copy">A Adianta é uma triagem digital para repartições públicas: o cidadão faz o pré-atendimento online, e o servidor chega ao guichê já com a demanda organizada. Nascida de um estudo sobre logística e atendimento ao público no INSS e na Defensoria Pública.</p>
+        <a class="button" href="#proposta">Conheça a proposta <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-note"><span class="note-line"></span><span>Organização que começa antes da chegada.</span></div>
+    </section>
+    <section class="service-finder section" id="servicos">
+      <div class="section-label"><span>02</span> CONSULTA DE SERVIÇOS</div>
+      <div class="services-head"><h2>Encontre o serviço<br>que procura</h2><p>Consulte exemplos de áreas de atendimento. A disponibilidade e a documentação devem ser confirmadas com cada instituição.</p></div>
+      <label class="field search-field">Buscar por instituição ou serviço<input id="service-search" type="search" placeholder="Ex.: INSS, orientação jurídica" autocomplete="off"></label>
+      <div class="service-list" id="service-list" aria-live="polite">
+        <article class="service-item" data-search="inss previdência benefício atendimento previdenciário"><div><span class="service-tag">INSS · EXEMPLO</span><h3>Atendimento previdenciário</h3><p>Consulte informações sobre serviços previdenciários e os canais oficiais disponíveis.</p></div><a href="https://www.gov.br/inss/pt-br" target="_blank" rel="noopener noreferrer">Acessar canal oficial ↗</a></article>
+        <article class="service-item" data-search="defensoria pública orientação jurídica assistência justiça"><div><span class="service-tag">DEFENSORIA PÚBLICA · EXEMPLO</span><h3>Orientação e assistência jurídica</h3><p>Consulte como buscar orientação jurídica gratuita e os canais oficiais da Defensoria.</p></div><a href="https://www.cnj.jus.br/poder-judiciario/defensoria-publica/" target="_blank" rel="noopener noreferrer">Consultar informações ↗</a></article>
+        <article class="service-item" data-search="outros serviços instituição pública"><div><span class="service-tag">OUTRAS INSTITUIÇÕES</span><h3>Outros serviços públicos</h3><p>Selecione a instituição e o serviço durante a solicitação de atendimento.</p><a class="choose-service" href="#cadastro">Solicitar atendimento ↓</a></div></article>
+      </div>
+    </section>
+    <section class="booking section" id="cadastro">
+      <div class="section-label"><span>03</span> CADASTRO E SOLICITAÇÃO</div>
+      <div class="booking-intro"><h2>Como você prefere<br>ser atendido?</h2><p>Cadastro demonstrativo para pessoa física. Escolha uma das modalidades e informe os dados necessários para encaminhar sua solicitação.</p></div>
+      <form id="request-form">
+        <fieldset class="mode-choice"><legend>Escolha uma modalidade</legend>
+          <label class="mode-card"><input type="radio" name="mode" value="online" required><span><b>Atendimento online</b><small>Solicite atendimento remoto, sujeito à disponibilidade da instituição.</small></span></label>
+          <label class="mode-card"><input type="radio" name="mode" value="presencial"><span><b>Atendimento presencial agendado</b><small>Solicite um horário e receba uma senha demonstrativa para agilizar a organização da chegada.</small></span></label>
+        </fieldset>
+        <div class="form-grid">
+          <label class="field">Nome completo<input name="name" required autocomplete="name" maxlength="100"></label>
+          <label class="field">E-mail<input name="email" type="email" required autocomplete="email"></label>
+          <label class="field">Instituição<select name="institution" required><option value="">Selecione</option><option>INSS</option><option>Defensoria Pública</option><option>Outra instituição pública</option></select></label>
+          <label class="field">Serviço desejado<input name="service" required maxlength="120" placeholder="Descreva o serviço"></label>
+          <label class="field in-person-field" hidden>Data preferida<input name="date" type="date"></label>
+          <label class="field in-person-field" hidden>Período preferido<select name="period"><option value="">Selecione</option><option>Manhã</option><option>Tarde</option></select></label>
+        </div>
+        <label class="consent"><input type="checkbox" name="reminders"> Quero receber lembretes demonstrativos por e-mail sobre esta solicitação.</label>
+        <p class="privacy-note">Este protótipo mantém o cadastro salvo somente neste navegador e dispositivo. Os dados não são enviados às instituições. Use dados fictícios ao apresentar. O agendamento e a senha exibidos são apenas demonstrativos; a confirmação real dependeria dos sistemas e das regras da instituição.</p>
+        <button class="submit-button" type="submit">Enviar solicitação demonstrativa <span>→</span></button>
+        <div id="request-result" class="request-result" role="status" aria-live="polite" tabindex="-1" hidden></div>
+      </form>
+    </section>
+    <section class="intro section" id="proposta">
+      <div class="section-label"><span>01</span> A PROPOSTA</div>
+      <div class="intro-content"><h2>Preparar o atendimento<br>também é <em>cuidar.</em></h2><p>Diante das necessidades identificadas, apresenta-se como proposta de melhoria a criação de um site destinado à organização e ao agendamento dos atendimentos. A plataforma Adianta é uma proposta conceitual de aplicação dos princípios logísticos aos serviços públicos, com a finalidade de facilitar o acesso dos usuários às informações e aos serviços disponibilizados pelas instituições.</p><p>A ferramenta teria interface simples e acessível, permitindo que os usuários consultem os serviços oferecidos, verifiquem a documentação necessária e solicitem agendamentos. Poderia disponibilizar confirmações e lembretes, contribuindo para evitar esquecimentos, reduzir deslocamentos desnecessários e melhorar a comunicação entre as instituições e a população.</p></div>
+    </section>
+    <section class="services section" id="funcionamento">
+      <div class="section-label"><span>04</span> ESCOPO DA PROPOSTA</div>
+      <div class="services-head"><h2>O que a proposta<br>prevê oferecer</h2><p>Recursos de informação e apoio administrativo, apresentados de forma simples e acessível.</p></div>
+      <div class="cards">
+        <article class="card"><span class="card-num">01</span><div class="icon">⌕</div><h3>Informação antes da visita</h3><p>Consulta aos serviços oferecidos e à documentação necessária para cada atendimento.</p></article>
+        <article class="card"><span class="card-num">02</span><div class="icon">▦</div><h3>Pedido de agendamento</h3><p>Solicitação de agendamentos, com confirmações e lembretes relacionados ao horário solicitado.</p></article>
+        <article class="card"><span class="card-num">03</span><div class="icon">≋</div><h3>Demandas organizadas</h3><p>Apoio administrativo ao controle de horários, à organização das demandas e à distribuição dos atendimentos.</p></article>
+        <article class="card"><span class="card-num">04</span><div class="icon">↗</div><h3>Orientação antecipada</h3><p>Orientações prévias para ajudar a reduzir deslocamentos motivados por falta de informação ou documentação.</p></article>
+      </div>
+    </section>
+    <section class="boundary section" id="diretrizes">
+      <div class="section-label"><span>05</span> LIMITES E DIRETRIZES</div>
+      <div class="boundary-grid"><h2>Tecnologia como<br>apoio ao serviço.</h2><div><p class="boundary-lead">No âmbito administrativo, a plataforma poderia auxiliar os profissionais no controle dos horários, na organização das demandas e na distribuição dos atendimentos entre os setores responsáveis.</p><p>A disponibilização antecipada de orientações e informações poderia reduzir a necessidade de deslocamentos presenciais apenas para esclarecimentos ou marcações de horários, permitindo que os profissionais dediquem mais atenção aos atendimentos que exigem acompanhamento específico.</p><ul class="checks"><li>A possível implantação exige planejamento e segurança das informações.</li><li>A ferramenta deve priorizar acessibilidade e adaptação às necessidades dos usuários.</li><li>Não tem como objetivo substituir os atendimentos presenciais ou os sistemas oficiais das instituições.</li><li>Funciona como recurso complementar, respeitando as normas institucionais e a proteção dos dados pessoais.</li></ul></div></div>
+    </section>
+    <section class="about section" id="sobre">
+      <div class="section-label"><span>06</span> SOBRE O PROJETO</div><div class="about-grid"><h2>Adianta</h2><div><p>Projeto acadêmico de conclusão de curso (TCC).</p><p>A proposta relaciona logística e atendimento ao público no contexto do INSS e da Defensoria Pública, aplicando princípios logísticos aos serviços públicos.</p><p class="institution">IDENTIFICAÇÃO INSTITUCIONAL<br><span>Instituição de ensino · Curso · Autor(a) · Orientador(a) · Ano</span></p></div></div>
+    </section>
+    <section class="closing"><p>Um atendimento mais organizado começa com informação clara.</p><a href="#inicio">Voltar ao início ↑</a></section>
+  </main>
+  <footer><a class="brand" href="#inicio"><img class="brand-logo" src="assets/adianta-logo.png" alt=""> adianta<span class="dot">.</span></a><span>Projeto acadêmico · TCC</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
